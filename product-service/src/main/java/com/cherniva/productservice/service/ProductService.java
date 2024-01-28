@@ -30,13 +30,13 @@ public class ProductService {
     public List<ProductResponse> getAllProducts() {
         List<Product> products = productRepository.findAll();
 
-        return products.stream().map(product -> {
-            return ProductResponse.builder()
+        return products.stream()
+                .map(product -> ProductResponse.builder()
                     .id(product.getId())
                     .name(product.getName())
                     .description(product.getDescription())
                     .price(product.getPrice())
-                    .build();
-        }).toList();
+                    .build())
+                .toList();
     }
 }

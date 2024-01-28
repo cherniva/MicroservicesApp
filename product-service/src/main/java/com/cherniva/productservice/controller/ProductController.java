@@ -15,6 +15,7 @@ import java.util.List;
 public class ProductController {
 
     private ProductService productService;
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void createProduct(@RequestBody ProductRequest productRequest) {
@@ -26,4 +27,6 @@ public class ProductController {
     public List<ProductResponse> getAllProducts() {
         return productService.getAllProducts();
     }
+
+//    @DeleteMapping
 }
