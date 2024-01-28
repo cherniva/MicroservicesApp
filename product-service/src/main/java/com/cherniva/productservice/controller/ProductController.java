@@ -28,5 +28,7 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-//    @DeleteMapping
+//    @GetMapping("/{name}") /* getProductByName(@PathVariable String name) */
+//    @DeleteMapping("/{name}") /* deleteProduct(@PathVariable String id) */
+//    @PutMapping /* updateProduct */
 }
