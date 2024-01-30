@@ -1,0 +1,5 @@
+com/cherniva/inventoryservice/model/Inventory.class
+com/cherniva/inventoryservice/service/InventoryService.class
+com/cherniva/inventoryservice/repository/InventoryRepository.class
+com/cherniva/inventoryservice/controller/InventoryController.class
+com/cherniva/inventoryservice/InventoryServiceApplication.class

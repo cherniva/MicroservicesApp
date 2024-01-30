@@ -1,0 +1,7 @@
+/Users/vokinrehc/Projects/MicroserivcesProject/microservice-app/product-service/src/main/java/com/cherniva/productservice/dto/ProductRequest.java
+/Users/vokinrehc/Projects/MicroserivcesProject/microservice-app/product-service/src/main/java/com/cherniva/productservice/service/ProductService.java
+/Users/vokinrehc/Projects/MicroserivcesProject/microservice-app/product-service/src/main/java/com/cherniva/productservice/model/Product.java
+/Users/vokinrehc/Projects/MicroserivcesProject/microservice-app/product-service/src/main/java/com/cherniva/productservice/repository/ProductRepository.java
+/Users/vokinrehc/Projects/MicroserivcesProject/microservice-app/product-service/src/main/java/com/cherniva/productservice/dto/ProductResponse.java
+/Users/vokinrehc/Projects/MicroserivcesProject/microservice-app/product-service/src/main/java/com/cherniva/productservice/controller/ProductController.java
+/Users/vokinrehc/Projects/MicroserivcesProject/microservice-app/product-service/src/main/java/com/cherniva/productservice/ProductServiceApplication.java

@@ -1,0 +1,10 @@
+com/cherniva/productservice/repository/ProductRepository.class
+com/cherniva/productservice/dto/ProductResponse.class
+com/cherniva/productservice/service/ProductService.class
+com/cherniva/productservice/dto/ProductRequest.class
+com/cherniva/productservice/controller/ProductController.class
+com/cherniva/productservice/model/Product.class
+com/cherniva/productservice/dto/ProductRequest$ProductRequestBuilder.class
+com/cherniva/productservice/model/Product$ProductBuilder.class
+com/cherniva/productservice/ProductServiceApplication.class
+com/cherniva/productservice/dto/ProductResponse$ProductResponseBuilder.class
