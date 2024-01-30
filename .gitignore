@@ -141,3 +141,7 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+order-service
+inventory-service
+product-service
