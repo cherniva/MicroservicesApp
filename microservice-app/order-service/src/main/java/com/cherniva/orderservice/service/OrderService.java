@@ -1,5 +1,6 @@
 package com.cherniva.orderservice.service;
 
+import com.cherniva.orderservice.dto.InventoryResponse;
 import com.cherniva.orderservice.dto.OrderRequest;
 import com.cherniva.orderservice.model.Order;
 import com.cherniva.orderservice.model.OrderLineItems;
@@ -8,7 +9,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -18,7 +21,8 @@ import java.util.UUID;
 @Transactional
 public class OrderService {
 
-    private OrderRepository orderRepository;
+    private final OrderRepository orderRepository;
+    private final WebClient webClient;
 
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
@@ -35,7 +39,28 @@ public class OrderService {
                 .toList();
 
         order.setOrderLineItemsList(orderLineItems);
-        orderRepository.save(order);
-        log.info("Order {} saved", order.getId());
+
+        List<String> skuCodes = order.getOrderLineItemsList().stream()
+                .map(OrderLineItems::getSkuCode)
+                .toList();
+
+        // check if order line items are in inventory stock
+        InventoryResponse[] inventoryResponseArray = webClient.get()
+                .uri("http://localhost:8082/api/inventory",
+                        uriBuilder -> uriBuilder.queryParam("skuCodes", skuCodes).build())
+                .retrieve()
+                .bodyToMono(InventoryResponse[].class)
+                .block();
+
+        boolean allProductsInStock = Arrays.stream(inventoryResponseArray)
+                .allMatch(InventoryResponse::isInStock);
+
+        if (allProductsInStock) {
+            orderRepository.save(order);
+            log.info("Order {} saved", order.getId());
+        } else {
+            log.error("Product is not in stock");
+            throw new IllegalArgumentException("Product is not in stock");
+        }
     }
 }

@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 public class OrderController {
 
-    private OrderService orderService;
+    private final OrderService orderService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public String placeOrder(@RequestBody OrderRequest orderRequest) {
         orderService.placeOrder(orderRequest);
-        return "Order placed suvvesfully";
+        return "Order placed succesfully";
     }
 
 }
