@@ -142,6 +142,6 @@ Desktop.ini
 ######################
 .eslintcache
 
-order-service
-inventory-service
-product-service
+/order-service
+/inventory-service
+/product-service
