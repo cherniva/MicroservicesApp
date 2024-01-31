@@ -146,4 +146,7 @@ Desktop.ini
 /inventory-service
 /product-service
 
-microservice-app/order-service/target
+/microservice-app/order-service/target
+/microservice-app/inventory-service/target
+/microservice-app/product-service/target
+/microservice-app/discovery-server/target
