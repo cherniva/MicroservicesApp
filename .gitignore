@@ -145,3 +145,5 @@ Desktop.ini
 /order-service
 /inventory-service
 /product-service
+
+microservice-app/order-service/target
